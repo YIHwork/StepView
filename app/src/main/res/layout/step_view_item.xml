@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hyshare.stepview.StepView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:stepView="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/step_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    stepView:stepLine="@color/colorAccent"
+    stepView:stepLine1DashGap="5dp"
+    stepView:stepLine1DashWidth="-1dp"
+    stepView:stepLine1Visible="true"
+    stepView:stepLine2Visible="true"
+    stepView:stepLineWidth="1dp"
+    stepView:stepNode="@color/colorAccent"
+    stepView:stepNodeLayoutReference="@id/step_title"
+    stepView:stepNodeSize="7dp"
+    stepView:stepWidth="40dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        android:paddingTop="10dp">
+
+        <TextView
+            android:id="@+id/step_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:text="Step01"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="查看详情"/>
+    </LinearLayout>
+</hyshare.stepview.StepView>

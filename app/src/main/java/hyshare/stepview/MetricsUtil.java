@@ -11,7 +11,7 @@ import android.view.WindowManager;
 public class MetricsUtil
 {
 
-  public static float getDensity(Context context)
+  static float getDensity(Context context)
   {
     WindowManager windowManager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
     if (windowManager == null) {

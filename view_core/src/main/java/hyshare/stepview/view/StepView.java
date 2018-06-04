@@ -1,4 +1,4 @@
-package hyshare.stepview;
+package hyshare.stepview.view;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -22,7 +22,9 @@ import android.support.annotation.DimenRes;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
+import android.util.DisplayMetrics;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.LinearLayout;
 
 /**
@@ -31,6 +33,8 @@ import android.widget.LinearLayout;
 
 public class StepView extends LinearLayout
 {
+  private int defaultStepNodeSize;
+
   private int mPaddingLeft;//父控件LinearLayout android:paddingLeft/paddingStart对应的值
   private boolean stepWidth_wrap;//stepWidth是固定大小还是依赖步骤视图内容大小
   private int stepWidth;//步骤视图宽度
@@ -99,10 +103,10 @@ public class StepView extends LinearLayout
     mXfermode_SRC_IN = new PorterDuffXfermode(PorterDuff.Mode.SRC_IN);
 
 
-    float density = MetricsUtil.getDensity(context);
+    float density = getDensity(context);
     int defaultPadding = (int) (5 * density);
     int defaultStepNodeReference = -1;
-    int defaultStepNodeSize = (int) (7 * density);
+    defaultStepNodeSize = (int) (7 * density);
     int defaultColor = Color.argb(0xff, 0xaa, 0xaa, 0xaa);
     int defaultLineWidth = (int) (1 * density);
     boolean defaultLineVisible = true;
@@ -172,12 +176,23 @@ public class StepView extends LinearLayout
     }
   }
 
+  private float getDensity(Context context)
+  {
+    WindowManager windowManager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
+    if (windowManager == null) {
+      return 1f;
+    }
+    DisplayMetrics metrics = new DisplayMetrics();
+    windowManager.getDefaultDisplay().getMetrics(metrics);
+    return metrics.density;
+  }
+
   @Override
   protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec)
   {
     if (stepNodeSize_wrap) {
       if (stepNodeDrawable.getIntrinsicWidth() <= 0 || stepNodeDrawable.getIntrinsicHeight() <= 0) {
-        stepNodeSize = (int) (7 * MetricsUtil.getDensity(getContext()));
+        stepNodeSize = defaultStepNodeSize;
       } else {
         stepNodeSize = Math.max(stepNodeDrawable.getIntrinsicWidth(), stepNodeDrawable.getIntrinsicHeight());
       }

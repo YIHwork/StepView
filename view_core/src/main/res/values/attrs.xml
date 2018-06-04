@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="stepView">
+        <attr name="stepWidth" format="dimension"/>
+        <attr name="stepPaddingLeft" format="dimension"/>
+        <attr name="stepPaddingRight" format="dimension"/>
+        <attr name="stepNodeLayoutReference" format="reference"/>
+        <attr name="stepNode" format="color|reference"/>
+        <attr name="stepNodeSize" format="dimension"/>
+        <attr name="stepLine" format="color"/>
+        <attr name="stepLineWidth" format="dimension"/>
+        <attr name="stepLineDashGap" format="dimension" />
+        <attr name="stepLineDashWidth" format="dimension" />
+        <attr name="stepLine1" format="color"/>
+        <attr name="stepLine1Width" format="dimension"/>
+        <attr name="stepLine1DashGap" format="dimension" />
+        <attr name="stepLine1DashWidth" format="dimension" />
+        <attr name="stepLine1Visible" format="boolean"/>
+        <attr name="stepLine2" format="color"/>
+        <attr name="stepLine2Width" format="dimension"/>
+        <attr name="stepLine2DashGap" format="dimension" />
+        <attr name="stepLine2DashWidth" format="dimension" />
+        <attr name="stepLine2Visible" format="boolean"/>
+    </declare-styleable>
+</resources>

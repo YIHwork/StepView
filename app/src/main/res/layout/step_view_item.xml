@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<hyshare.stepview.StepView
+<hyshare.stepview.view.StepView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:stepView="http://schemas.android.com/apk/res-auto"
     android:id="@+id/step_view"
@@ -41,4 +41,4 @@
             android:layout_marginTop="10dp"
             android:text="查看详情"/>
     </LinearLayout>
-</hyshare.stepview.StepView>
+</hyshare.stepview.view.StepView>

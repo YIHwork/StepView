@@ -1,6 +1,5 @@
-package hyshare.stepview;
+package hyshare.stepview.test;
 
-import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -8,6 +7,10 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import hyshare.stepview.MetricsUtil;
+import hyshare.stepview.R;
+import hyshare.stepview.StepView;
 
 public class MainActivity extends AppCompatActivity
 {
